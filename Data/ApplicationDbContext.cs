@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace hospitalservice
+namespace hospitalservice.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
