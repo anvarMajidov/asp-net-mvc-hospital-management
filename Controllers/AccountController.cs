@@ -15,5 +15,9 @@ namespace HospitalService.Models.ViewModels
         {
             return View();
         }
+        public IActionResult Register()
+        {
+            return View();
+        }
     }
 }
