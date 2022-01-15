@@ -1,4 +1,4 @@
-using hospitalservice.Data;
+using HospitalService.Data;
 using HospitalService.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
