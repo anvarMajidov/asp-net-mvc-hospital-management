@@ -15619,6 +15619,11 @@
   "RootNamespace": "HospitalService",
   "Documents": [
     {
+      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

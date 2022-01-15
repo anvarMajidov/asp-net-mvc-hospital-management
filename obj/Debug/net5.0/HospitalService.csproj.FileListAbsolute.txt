@@ -389,3 +389,4 @@ D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\bin\Debug\net5.0\zh-Hant\M
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\HospitalService.MvcApplicationPartsAssemblyInfo.cs
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
