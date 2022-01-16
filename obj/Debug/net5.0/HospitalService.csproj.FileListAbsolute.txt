@@ -390,3 +390,4 @@ D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\HospitalS
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\IT_projects\asp_net_core\AspNetMvc\HospitalService\obj\Debug\net5.0\Razor\Views\Appointment\Index.cshtml.g.cs

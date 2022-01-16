@@ -15629,6 +15629,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Appointment\\Index.cshtml",
+      "TargetPath": "Views\\Appointment\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"

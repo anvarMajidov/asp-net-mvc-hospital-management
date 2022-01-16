@@ -7,7 +7,7 @@ namespace HospitalService.Services
 {
     public interface IAppointmentService
     {
-        Task<List<DoctorVM>> GetDoctorList();
-        Task<List<PatientVM>> GetPatientList();
+        List<DoctorVM> GetDoctorList();
+        List<PatientVM> GetPatientList();
     }
 }

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="container">
+        @if (User.IsInRole(HospitalService.Helper.Helper.Admin))
+        {
+            <div class="form-group row col-2" id="divDoctorList">
+                <label> Select Doctor</label>
+                <select asp-items="@ViewBag.DropDown" class="form-control select2" id="doctorId">
+                </select>
+            </div>
+        }
+    </div>
+</div>

@@ -6,6 +6,7 @@ using HospitalService.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using HospitalService.Helper;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace HospitalService.Services
 {
@@ -17,34 +18,34 @@ namespace HospitalService.Services
             _db = db;
         }
 
-        public async Task<List<DoctorVM>> GetDoctorList()
+        public List<DoctorVM> GetDoctorList()
         {
-            List<DoctorVM> doctors = await (
+            List<DoctorVM> doctors = (
                 from user in _db.Users
                 join userRoles in _db.UserRoles on user.Id equals userRoles.UserId
                 join roles in _db.Roles.Where(r => r.Name == Helper.Helper.Doctor) on 
-                userRoles.UserId equals roles.Id
+                userRoles.RoleId equals roles.Id
                 
                 select new DoctorVM {
                     Id = user.Id,
                     Name = user.Name
-                }).ToListAsync();
+                }).ToList();
 
             return doctors;
         }
 
-        public async Task<List<PatientVM>> GetPatientList()
+        public List<PatientVM> GetPatientList()
         {
-            List<PatientVM> patients = await (
+            List<PatientVM> patients = (
                 from user in _db.Users
                 join userRoles in _db.UserRoles on user.Id equals userRoles.UserId
                 join roles in _db.Roles.Where(r => r.Name == Helper.Helper.Patient) on 
-                userRoles.UserId equals roles.Id
+                userRoles.RoleId equals roles.Id
                 
                 select new PatientVM {
                     Id = user.Id,
                     Name = user.Name
-                }).ToListAsync();
+                }).ToList();
 
             return patients;
         }
