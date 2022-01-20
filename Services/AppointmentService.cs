@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using HospitalService.Helper;
 using Microsoft.EntityFrameworkCore;
 using System;
+using HospitalService.Models;
 
 namespace HospitalService.Services
 {
@@ -48,6 +49,39 @@ namespace HospitalService.Services
                 }).ToList();
 
             return patients;
+        }
+
+        public async Task<int> AddUpdate(AppointmentVM model)
+        {
+            ServiceResponse<int> response = new();
+
+            var startDate = DateTime.Parse(model.StartDate);
+            var endDate = DateTime.Parse(model.StartDate).AddMinutes(Convert.ToDouble(model.Duration));
+
+            if(model != null && model.Id > 0)
+            {
+                //update
+                return 1;
+            }
+            else 
+            {
+                Appointment appointment = new Appointment()
+                {
+                    Id = (int) model.Id,
+                    Title = model.Title,
+                    Description = model.Description,
+                    StartDate = startDate,
+                    EndDate = endDate,
+                    Duration = model.Duration,
+                    DoctorId = model.DoctorId,
+                    PatientId = model.PatientId,
+                    AdminId = model.AdminId,
+                    IsDoctorApproved = model.IsDoctorApproved
+                };
+                await _db.Appointments.AddAsync(appointment);
+                await _db.SaveChangesAsync();
+                return 2;
+            }
         }
     }
 }

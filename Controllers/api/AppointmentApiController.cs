@@ -1,4 +1,7 @@
+using System;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using HospitalService.Models.ViewModels;
 using HospitalService.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +20,6 @@ namespace HospitalService.Controllers.api
             _httpContextAccessor = httpContextAccessor;
             loginUserId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             role = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
     }
 }
