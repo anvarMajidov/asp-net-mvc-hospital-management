@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\HospitalService.csproj": {}
+    "D:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\HospitalService.csproj": {}
   },
   "projects": {
-    "D:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\HospitalService.csproj": {
+    "D:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\HospitalService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\HospitalService.csproj",
+        "projectUniqueName": "D:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\HospitalService.csproj",
         "projectName": "HospitalService",
-        "projectPath": "D:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\HospitalService.csproj",
+        "projectPath": "D:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\HospitalService.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\obj\\",
+        "outputPath": "D:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

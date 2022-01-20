@@ -15,7 +15,9 @@ namespace HospitalService.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Duration = Helper.Helper.GetTimeDropDown();
             ViewBag.DropDown = new SelectList(_appointmentService.GetDoctorList(), "Id", "Name");
+            ViewBag.PatientList = new SelectList(_appointmentService.GetPatientList(), "Id", "Name");
             return View();
         }
     }

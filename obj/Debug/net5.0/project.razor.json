@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\HospitalService.csproj",
+  "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\HospitalService.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,58 +15619,63 @@
   "RootNamespace": "HospitalService",
   "Documents": [
     {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Appointment\\Index.cshtml",
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Appointment\\Index.cshtml",
       "TargetPath": "Views\\Appointment\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Account\\Register.cshtml",
-      "TargetPath": "Views\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Account\\Login.cshtml",
-      "TargetPath": "Views\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\Shared\\Error.cshtml",
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\IT_projects\\asp_net_core\\AspNetMvc\\HospitalService\\Views\\_ViewImports.cshtml",
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Account\\Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Shared\\_AddEditAppointment.cshtml",
+      "TargetPath": "Views\\Shared\\_AddEditAppointment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\IT_projects\\c#_asp_net_core\\aspNetMvc\\HospitalService\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     }
   ],
