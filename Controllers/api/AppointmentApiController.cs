@@ -66,7 +66,7 @@ namespace HospitalService.Controllers.api
                     response.status = Helper.Helper.success_code;
                 }
                 else {
-                    response.data = _appointmentService.GetDoctorEventsById(loginUserId);
+                    response.data = _appointmentService.GetDoctorEventsById(doctorId);
                     response.status = Helper.Helper.success_code;
                 }
             } 

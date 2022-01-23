@@ -99,7 +99,7 @@ namespace HospitalService.Services
 
         public List<AppointmentVM> GetPatientEventsById(string patientId)
         {
-            return _db.Appointments.Where(a => a.PatientId == patientId).Select(a => new AppointmentVM
+            return _db.Appointments.Where(a => a.PatientId == patientId).ToList().Select(a => new AppointmentVM
             {
                 Id = a.Id,
                 Title = a.Title,
