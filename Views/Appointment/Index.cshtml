@@ -4,7 +4,7 @@
         {
             <div class="form-group row col-2" id="divDoctorList">
                 <label> Select Doctor</label>
-                <select asp-items="@ViewBag.DropDown" class="form-control select2" id="doctorId">
+                <select asp-items="@ViewBag.DropDown" class="form-control select2" id="doctorId" onchange="onDoctorChange()">
                 </select>
             </div>
         }
