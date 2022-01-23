@@ -88,6 +88,13 @@ function onShowModal(obj, isEventDetail) {
   $("#appointmentInput").modal("show");
 }
 function onCloseModal() {
+  $("#apointmentForm")[0].reset();
+  $("#id").val(0);
+  $("#title").val("");
+  $("#description").val("");
+  $("#appointmentDate").val("");
+  $("#duration").val("");
+  $("#patientId").val("");
   $("#appointmentInput").modal("hide");
 }
 function onSubmitForm() {
@@ -110,6 +117,7 @@ function onSubmitForm() {
       success: function (response) {
         if (response.status === 1 || response.status === 2) {
           $.notify(response.message, "success");
+          calendar.refetchEvents();
           onCloseModal();
         } else {
           $.notify(response.message, "error");
