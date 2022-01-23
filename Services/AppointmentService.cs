@@ -110,5 +110,24 @@ namespace HospitalService.Services
                 IsDoctorApproved = a.IsDoctorApproved
             }).ToList();
         }
+
+        public AppointmentVM GetAppointmentById(int id)
+        {
+            Appointment a = _db.Appointments.FirstOrDefault(a => a.Id == id);
+            return new AppointmentVM
+            {
+                Id = a.Id,
+                Title = a.Title,
+                Description = a.Description,
+                StartDate = a.StartDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                EndDate = a.EndDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                Duration = a.Duration,
+                IsDoctorApproved = a.IsDoctorApproved,
+                PatientId = a.PatientId,
+                DoctorId = a.DoctorId,
+                PatientName = _db.Users.FirstOrDefault(u => u.Id == a.PatientId).Name,
+                DoctorName = _db.Users.FirstOrDefault(u => u.Id == a.DoctorId).Name,
+            };
+        }
     }
 }

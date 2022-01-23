@@ -12,5 +12,6 @@ namespace HospitalService.Services
         Task<int> AddUpdate(AppointmentVM model);
         List<AppointmentVM> GetDoctorEventsById(string doctorId);
         List<AppointmentVM> GetPatientEventsById(string patientId);
+        AppointmentVM GetAppointmentById(int id);
     }
 }

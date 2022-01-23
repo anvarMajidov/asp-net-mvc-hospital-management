@@ -78,5 +78,22 @@ namespace HospitalService.Controllers.api
             }
             return Ok(response);
         }
+    
+        [HttpGet("GetCalendarDataById/{id}")]
+        public IActionResult GetCalendarDataById(int id)
+        {
+            ServiceResponse<AppointmentVM> response = new();
+            try {
+                response.data = _appointmentService.GetAppointmentById(id);
+                response.status = Helper.Helper.success_code;
+            } 
+            catch(Exception e) {
+                response.message = e.Message;
+                response.status = Helper.Helper.failure_code;
+                
+                return BadRequest(response);
+            }
+            return Ok(response);
+        }
     }
 }
