@@ -67,7 +67,6 @@ namespace HospitalService.Services
             {
                 Appointment appointment = new Appointment()
                 {
-                    Id = (int) model.Id,
                     Title = model.Title,
                     Description = model.Description,
                     StartDate = startDate,

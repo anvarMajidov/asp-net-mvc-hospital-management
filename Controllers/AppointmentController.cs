@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using HospitalService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -12,7 +13,7 @@ namespace HospitalService.Controllers
         {
             _appointmentService = appointmentService;
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             ViewBag.Duration = Helper.Helper.GetTimeDropDown();

@@ -3,12 +3,15 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using HospitalService.Models.ViewModels;
 using HospitalService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalService.Controllers.api
 {
-    public class AppointmentApiController : Controller
+    [ApiController]
+    [Route("api/appointment")]
+    public class AppointmentApiController : ControllerBase
     {
         private readonly IAppointmentService _appointmentService;
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -22,8 +25,7 @@ namespace HospitalService.Controllers.api
             role = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
         }
 
-        [HttpPost]
-        [Route("SaveCalendarData")]
+        [HttpPost("SaveCalendarData")]
         public IActionResult SaveCalendarData(AppointmentVM data)
         {
             ServiceResponse<int> commonResponse = new();
