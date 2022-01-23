@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using HospitalService.Models.ViewModels;
@@ -48,6 +49,34 @@ namespace HospitalService.Controllers.api
             }
 
             return Ok(commonResponse);
+        }
+        [HttpGet("GetCalendarData")]
+        public IActionResult GetCalendarData(string doctorId)
+        {
+            ServiceResponse<List<AppointmentVM>> response = new();
+            try {
+                if(role == Helper.Helper.Doctor)
+                {
+                    response.data = _appointmentService.GetDoctorEventsById(loginUserId);
+                    response.status = Helper.Helper.success_code;
+                }
+                else if(role == Helper.Helper.Patient)
+                {
+                    response.data = _appointmentService.GetPatientEventsById(loginUserId);
+                    response.status = Helper.Helper.success_code;
+                }
+                else {
+                    response.data = _appointmentService.GetDoctorEventsById(loginUserId);
+                    response.status = Helper.Helper.success_code;
+                }
+            } 
+            catch(Exception e) {
+                response.message = e.Message;
+                response.status = Helper.Helper.failure_code;
+                
+                return BadRequest(response);
+            }
+            return Ok(response);
         }
     }
 }
