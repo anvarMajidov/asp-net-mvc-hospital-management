@@ -82,5 +82,33 @@ namespace HospitalService.Services
                 return 2;
             }
         }
+
+        public List<AppointmentVM> GetDoctorEventsById(string doctorId)
+        {
+            return _db.Appointments.Where(a => a.DoctorId == doctorId).Select(a => new AppointmentVM
+            {
+                Id = a.Id,
+                Title = a.Title,
+                Description = a.Description,
+                StartDate = a.StartDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                EndDate = a.EndDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                Duration = a.Duration,
+                IsDoctorApproved = a.IsDoctorApproved
+            }).ToList();
+        }
+
+        public List<AppointmentVM> GetPatientEventsById(string patientId)
+        {
+            return _db.Appointments.Where(a => a.PatientId == patientId).Select(a => new AppointmentVM
+            {
+                Id = a.Id,
+                Title = a.Title,
+                Description = a.Description,
+                StartDate = a.StartDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                EndDate = a.EndDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                Duration = a.Duration,
+                IsDoctorApproved = a.IsDoctorApproved
+            }).ToList();
+        }
     }
 }
