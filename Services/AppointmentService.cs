@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using HospitalService.Data;
 using HospitalService.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using HospitalService.Helper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using HospitalService.Models;
@@ -128,6 +127,28 @@ namespace HospitalService.Services
                 PatientName = _db.Users.FirstOrDefault(u => u.Id == a.PatientId).Name,
                 DoctorName = _db.Users.FirstOrDefault(u => u.Id == a.DoctorId).Name,
             };
+        }
+
+        public async Task<int> DeleteAppointment(int id)
+        {
+            Appointment appointment = _db.Appointments.FirstOrDefault(a => a.Id == id);
+            if(appointment != null)
+            {
+                _db.Appointments.Remove(appointment);
+                return await _db.SaveChangesAsync();
+            }
+            return 0;
+        }
+
+        public async Task<int> ConfirmEvent(int id)
+        {
+            Appointment appointment = _db.Appointments.FirstOrDefault(a => a.Id == id);
+            if(appointment != null)
+            {
+                appointment.IsDoctorApproved = true;
+                return await _db.SaveChangesAsync();
+            }
+            return 0;
         }
     }
 }
