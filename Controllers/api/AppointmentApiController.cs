@@ -99,19 +99,19 @@ namespace HospitalService.Controllers.api
         public async Task<IActionResult> DeleteAppointment(int id)
         {
             ServiceResponse<int> response = new();
-            int result = await _appointmentService.DeleteAppointment(id);
             try {
                 response.status = await _appointmentService.DeleteAppointment(id);
-                response.message = response.status == 1 ? Helper.Helper.appointmentDeleted : Helper.Helper.somethingWentWrong;
+                response.message = response.status != 0 ? Helper.Helper.appointmentDeleted : Helper.Helper.somethingWentWrong;
             }
             catch(Exception e) {
                 response.status = Helper.Helper.failure_code;
-                response.message = Helper.Helper.somethingWentWrong;
+                response.message = e.Message;
                 
                 return BadRequest(response);
             }
             return Ok(response);
         }
+
         [HttpGet("ConfirmEvent/{id}")]
         public async Task<IActionResult> ConfirmEvent(int id)
         {
@@ -120,8 +120,8 @@ namespace HospitalService.Controllers.api
                 int result = await _appointmentService.ConfirmEvent(id);
                 if(result > 0)
                 {
-                    response.status = await _appointmentService.ConfirmEvent(id);
-                    response.message = response.status == 1 ? Helper.Helper.appointmentUpdated : Helper.Helper.somethingWentWrong;
+                    response.status = result;
+                    response.message = result != 0 ? Helper.Helper.appointmentUpdated : Helper.Helper.somethingWentWrong;
                 }
             }
             catch(Exception e) {

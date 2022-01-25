@@ -1,0 +1,32 @@
+[33m288c4ba[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Confirm and delete appointment
+[33m0040952[m display patient name and status frontend code
+[33mce64a81[m format content based on Role
+[33mda6d72f[m configure date on click in fullcalendar
+[33m3342b05[m onChange event was added to fullcalendar
+[33m272a2db[m Click event where model pops up in fullcalendar
+[33m9245e56[m Added GetAppointmentById function
+[33m502de90[m display events in fullcalendar
+[33m34f56af[m Get list doctor/patient events in Api
+[33mf5a212c[m getDoctorEvents and patientEvents were created in IAppointment service
+[33md64fe77[m Frontend validation
+[33m1d361d0[m Build data for API call -> Send data from frontend
+[33maf45475[m savecalnerdata method in appointmentapicontroller
+[33mff247e2[m Create AddUpdate in AppointmentService
+[33mf963a86[m Added Appointment model and view model
+[33m21a21df[m Add appointmentApiController, also fixed some frontend mistakes
+[33mb8e19b4[m update fullcalendar.js
+[33mdb36e30[m _AddEditAppointment was added
+[33mb3aadb2[m Get Dropdown
+[33mcbd767d[m Add GetDoctors/Patients to AppointmentService
+[33mcdc0633[m basic setup for appointment
+[33m2f8cd26[m Add Login, Logoff, and error validation
+[33m9a3c7f0[m Add roles to db, add role to user while creating
+[33m3713086[m Added register post method
+[33m3ce0ca7[m Created ApplicationUser:IdentityUser with new properties
+[33mf8da0d9[m Added identity to services and created loginPartial
+[33m0a01eaf[m Added Register action/view, helper class
+[33mbeffb39[m Added register-view-model
+[33m924de3d[m Add login_view_model, login_view, login action in accountcontroller
+[33m04d664e[m Add js/css plugins, layout change
+[33m6994d8c[m Configured connection string and IdentityDbContext
+[33m9fea6e2[m first commit

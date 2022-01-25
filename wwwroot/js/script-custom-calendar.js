@@ -34,7 +34,6 @@ function InitializeCalendar() {
             type: "GET",
             dataType: "JSON",
             success: function (response) {
-              console.log(response);
               var events = [];
               if (response.status === 1) {
                 $.each(response.data, function (i, data) {
@@ -45,7 +44,7 @@ function InitializeCalendar() {
                     end: data.endDate,
                     backgroundColor: data.isDoctorApproved
                       ? "#28a745"
-                      : "green",
+                      : "#dc3545",
                     borderColor: "#162466",
                     textColor: "white",
                     id: data.id,
@@ -168,7 +167,6 @@ function getEventDetailsByEventId(info) {
       if (response.status === 1 && response.data !== undefined) {
         onShowModal(response.data, true);
       }
-      successCallback(events);
     },
     error: function (xhr) {
       $.notify("Error", "error");
@@ -178,4 +176,45 @@ function getEventDetailsByEventId(info) {
 
 function onDoctorChange() {
   calendar.refetchEvents();
+}
+function onDeleteAppointment() {
+  var id = parseInt($("#id").val());
+  $.ajax({
+    url: routeURL + "/api/Appointment/DeleteAppointment/" + id,
+    type: "GET",
+    dataType: "JSON",
+    success: function (response) {
+      if (response.status === 1) {
+        $.notify(response.message, "success");
+        calendar.refetchEvents();
+        onCloseModal();
+      } else {
+        $.notify(response.message, "error");
+      }
+    },
+    error: function (xhr) {
+      $.notify("Error", "error");
+    },
+  });
+}
+
+function onConfirm() {
+  var id = parseInt($("#id").val());
+  $.ajax({
+    url: routeURL + "/api/Appointment/ConfirmEvent/" + id,
+    type: "GET",
+    dataType: "JSON",
+    success: function (response) {
+      if (response.status === 1) {
+        $.notify(response.message, "success");
+        calendar.refetchEvents();
+        onCloseModal();
+      } else {
+        $.notify(response.message, "error");
+      }
+    },
+    error: function (xhr) {
+      $.notify("Error", "error");
+    },
+  });
 }
