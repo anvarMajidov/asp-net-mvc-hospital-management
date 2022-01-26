@@ -59,7 +59,18 @@ namespace HospitalService.Services
 
             if(model != null && model.Id > 0)
             {
-                //update
+                Appointment appointment = await _db.Appointments.FirstOrDefaultAsync(a => a.Id == model.Id);
+                appointment.Title = model.Title;
+                appointment.Description = model.Description;
+                appointment.StartDate = startDate;
+                appointment.EndDate = endDate;
+                appointment.Duration = model.Duration;
+                appointment.DoctorId = model.DoctorId;
+                appointment.PatientId = model.PatientId;
+                appointment.AdminId = model.AdminId;
+                appointment.IsDoctorApproved = model.IsDoctorApproved;
+                await _db.SaveChangesAsync();
+
                 return 1;
             }
             else 
