@@ -34,11 +34,17 @@ namespace HospitalService.Helper
             return duration;
         }
 
-        public static List<SelectListItem> GetRolesDropDown()
+        public static List<SelectListItem> GetRolesDropDown(bool isAdmin)
         {
+            if(isAdmin)
+            {
+                return new List<SelectListItem>
+                {
+                    new SelectListItem{Value = Helper.Admin, Text = Helper.Admin}
+                };
+            }
             return new List<SelectListItem>
             {
-                new SelectListItem{Value = Helper.Admin, Text = Helper.Admin},
                 new SelectListItem{Value = Helper.Patient, Text = Helper.Patient},
                 new SelectListItem{Value = Helper.Doctor, Text = Helper.Doctor}
             };

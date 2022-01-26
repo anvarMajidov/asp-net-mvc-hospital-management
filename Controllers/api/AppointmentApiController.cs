@@ -86,7 +86,7 @@ namespace HospitalService.Controllers.api
             try {
                 response.data = _appointmentService.GetAppointmentById(id);
                 response.status = Helper.Helper.success_code;
-            } 
+            }
             catch(Exception e) {
                 response.message = e.Message;
                 response.status = Helper.Helper.failure_code;
@@ -95,6 +95,7 @@ namespace HospitalService.Controllers.api
             }
             return Ok(response);
         }
+
         [HttpGet("DeleteAppointment/{id}")]
         public async Task<IActionResult> DeleteAppointment(int id)
         {

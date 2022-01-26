@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using HospitalService.Data;
 using HospitalService.Helper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -54,7 +55,14 @@ namespace HospitalService.Models.ViewModels
                 if(result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, model.RoleName);
-                    await _signInManager.SignInAsync(user, isPersistent:false);
+                    if (!User.IsInRole(Helper.Helper.Admin))
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                    }
+                    else
+                    {
+                        TempData["newAdminSignUp"] = user.Name;
+                    }
                     return RedirectToAction("Index", "Appointment");
                 }
                 foreach(var e in result.Errors)
@@ -73,6 +81,8 @@ namespace HospitalService.Models.ViewModels
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if(result.Succeeded)
                 {
+                    var user = await _userManager.FindByNameAsync(model.Email);
+                    HttpContext.Session.SetString("ssuserName", user.Name);
                     return RedirectToAction("Index", "Appointment");
                 }
                 ModelState.AddModelError("", "Invalid login attempt");
