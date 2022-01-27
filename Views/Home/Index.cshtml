@@ -1,6 +1,9 @@
 ﻿@{
     Layout = null;
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> signInManager
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,15 +88,24 @@
 
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#top" class="smoothScroll">Home</a></li>
-            <li><a href="#about" class="smoothScroll">About Us</a></li>
-            <li class="appointment-btn">
-              <a asp-controller="Appointment" asp-action="Index">Make an appointment</a>
-            </li>
-            <li><a class="smoothScroll" asp-controller="Account" asp-action="Register">Sign up</a></li>
-            <li><a class="smoothScroll" asp-controller="Account" asp-action="Login">Login</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top" class="smoothScroll">Home</a></li>
+                <li><a href="#about" class="smoothScroll">About Us</a></li>
+                <li class="appointment-btn">
+                    <a asp-controller="Appointment" asp-action="Index">Make an appointment</a>
+                </li>
+                @if (!signInManager.IsSignedIn(User))
+                {
+                    <li><a class="smoothScroll" asp-controller="Account" asp-action="Register">Sign up</a></li>
+                    <li><a class="smoothScroll" asp-controller="Account" asp-action="Login">Login</a></li>
+                }
+                else
+                {
+                  <form style="float: left;display: flex;justify-content: center;align-items: center;height: 50px;" method="post" id="logoutForm" asp-action="Logoff" asp-controller="Account">
+                    <li><a class="smoothScroll" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                  </form>
+                }
+            </ul>
         </div>
       </div>
     </section>
@@ -173,7 +185,7 @@
               </div>
               <figure class="profile wow fadeInUp" data-wow-delay="1s">
                 <img
-                  src="~home/images/author-image.jpg"
+                  src="~/home/images/author-image.jpg"
                   class="img-responsive"
                   alt=""
                 />
@@ -273,6 +285,8 @@
     <script src="~/home/js/smoothscroll.js"></script>
     <script src="~/home/js/owl.carousel.min.js"></script>
     <script src="~/home/js/custom.js"></script>
+    <script src="~/js/script-custom-calendar.js"></script>
+
   </body>
 </html>
 
