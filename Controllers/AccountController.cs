@@ -26,15 +26,8 @@ namespace HospitalService.Models.ViewModels
         {
             return View();
         }
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
-            if(!await _roleManager.RoleExistsAsync(Helper.Helper.Admin))
-            {
-                await _roleManager.CreateAsync(new IdentityRole(Helper.Helper.Admin));
-                await _roleManager.CreateAsync(new IdentityRole(Helper.Helper.Doctor));
-                await _roleManager.CreateAsync(new IdentityRole(Helper.Helper.Patient));
-            }
-
             return View();
         }
 
